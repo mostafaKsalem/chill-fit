@@ -18,9 +18,11 @@ function App() {
     {
       path: "/",
       element: (
-        <Suspense fallback={<Loading />}>
-          <Root />
-        </Suspense>
+        <RequireAuth>
+          <Suspense fallback={<Loading />}>
+            <Root />
+          </Suspense>
+        </RequireAuth>
       ),
       loader: isUserAuthLoader,
       children: [
