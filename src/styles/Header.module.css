@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+.header {
+  font-size: 2rem;
+  font-family: "Dancing Script", cursive, "system ui";
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.active {
+  color: #0077b6;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.navlink:hover {
+  background-color: lightblue;
+  border-radius: 4px;
+  padding: 4px 4px;
+  transition: all 0.3s ease-out;
+}
