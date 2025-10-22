@@ -3,6 +3,8 @@ import { Suspense, lazy } from "react";
 import { AuthProvider } from "./store/AuthContext";
 import { isUserAuthLoader } from "../src/util/auth";
 import RequireAuth from "./components/RequireAuth";
+import Loading from "./components/Loading";
+
 const Root = lazy(() => import("./layouts/Root"));
 const Home = lazy(() => import("./pages/Home"));
 const Products = lazy(() => import("./pages/Products"));
@@ -16,7 +18,7 @@ function App() {
     {
       path: "/",
       element: (
-        <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+        <Suspense fallback={<Loading />}>
           <Root />
         </Suspense>
       ),
@@ -25,7 +27,7 @@ function App() {
         {
           index: true,
           element: (
-            <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <RequireAuth>
                 <Home />
               </RequireAuth>
@@ -35,7 +37,7 @@ function App() {
         {
           path: "products",
           element: (
-            <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <RequireAuth>
                 <Products />
               </RequireAuth>
@@ -45,7 +47,7 @@ function App() {
         {
           path: "products/:productId",
           element: (
-            <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <RequireAuth>
                 <ProductDetails />
               </RequireAuth>
@@ -55,7 +57,7 @@ function App() {
         {
           path: "cart",
           element: (
-            <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <RequireAuth>
                 <Cart />
               </RequireAuth>
@@ -67,18 +69,11 @@ function App() {
     {
       path: "auth",
       children: [
-        {
-          path: "login",
-          element: (
-            <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
-              <Login />
-            </Suspense>
-          ),
-        },
+        { path: "login", element: <Login /> },
         {
           path: "signup",
           element: (
-            <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+            <Suspense fallback={<Loading />}>
               <Signup />
             </Suspense>
           ),
