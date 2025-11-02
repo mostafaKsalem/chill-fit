@@ -41,7 +41,7 @@ function Cart() {
                   ${item.price}
                 </h3>
               </div>
-              <div className="flex items-center gap-3">
+              <div className=" flex flex-col gap-2 items-center sm:flex-row sm:items-center sm:gap-3 ">
                 <Button
                   className="text-xl"
                   width="w-10"

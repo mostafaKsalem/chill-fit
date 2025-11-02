@@ -42,8 +42,8 @@ function Products() {
 
   return (
     <div className="p-6 flex flex-col min-h-screen">
-      <div className="flex justify-center items-center mb-8 gap-4 ">
-        <h1 className="text-3xl font-bold">Our Products</h1>
+      <div className="flex justify-center items-center mb-8 gap-4 mx-2 sm:mx-0 ">
+        <h1 className=" text-2xl sm:text-3xl font-bold">Our Products</h1>
         <input
           type="text"
           placeholder="Search products..."
